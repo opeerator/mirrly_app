@@ -30,13 +30,24 @@ import ControlTab from './tabs/bottom/control_bottom_tab';
 import MonitorTab from './tabs/bottom/monitor_bottom_tab';
 import AboutTab from './tabs/bottom/about_bottom_tab';
 
+import socketIO from "socket.io-client";
+var socket = socketIO('http://192.168.131.198:5000');
+
 const Tab = createMaterialBottomTabNavigator();
 
 function App(): JSX.Element {
+  const [status, setStatus] = React.useState('Disconnect');
   const [logoOpacity, setLogoOpacity] = React.useState(new Animated.Value(0));
   const [containerOpacity, setContainerOpacity] = React.useState(new Animated.Value(1));
 
   React.useEffect(() => {
+    socket.on('connect', () => { 
+      setStatus('Connected');
+    }); 
+    socket.on('disconnect', () => {
+      setStatus('Disconnected');
+    });
+
     const fadeInLogo = Animated.timing(logoOpacity, {
       toValue: 1,
       duration: 1000, // Change this value to adjust the animation duration
@@ -78,7 +89,7 @@ function App(): JSX.Element {
       </Animated.View>
       <SafeAreaView style={{ backgroundColor: '#9b4dca' }}>
         <View style={{ paddingVertical: 10, paddingHorizontal: 20, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={{ fontSize: 12, fontWeight: 'bold' }}>Status: Online</Text>
+          <Text style={{ fontSize: 12, fontWeight: 'bold' }}>Status: {status}</Text>
           <Text style={{ fontSize: 12, fontWeight: 'bold' }}>Battery: 90%</Text>
         </View>
       </SafeAreaView>
