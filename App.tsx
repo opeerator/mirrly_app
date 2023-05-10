@@ -31,7 +31,7 @@ import MonitorTab from './tabs/bottom/monitor_bottom_tab';
 import AboutTab from './tabs/bottom/about_bottom_tab';
 
 import socketIO from "socket.io-client";
-var socket = socketIO('http://192.168.131.198:5000');
+var socket = socketIO('http://192.168.248.180:5000');
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -101,14 +101,16 @@ function App(): JSX.Element {
             <MaterialCommunityIcons name="view-dashboard" color={color} size={24} />
           ),
         }}/>
-        <Tab.Screen name="Control" component={ControlTab} 
+        <Tab.Screen name="Control"
         options={{
           tabBarLabel: 'Control',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="camera-control" color={color} size={24} />
           ),
         }}
-        />
+        >
+          {() => <ControlTab socket={socket} />}
+        </Tab.Screen>
         <Tab.Screen name="Monitor" component={MonitorTab} 
         options={{
           tabBarLabel: 'Monitor',

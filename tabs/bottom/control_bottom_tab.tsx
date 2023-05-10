@@ -9,10 +9,12 @@ import SpeechTab from '../top/speech_tab';
 
 const Tab = createMaterialTopTabNavigator();
 
-export default function ControlTab() {
+export default function ControlTab({ socket }) {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Motor" component={MotorTab} />
+      <Tab.Screen name="Motor">
+      {() => <MotorTab socket={socket} />}
+      </Tab.Screen>
       <Tab.Screen name="Sensor" component={SensorTab} />
       <Tab.Screen name="Vision" component={VisionTab} />
       <Tab.Screen name="Speech" component={SpeechTab} />
