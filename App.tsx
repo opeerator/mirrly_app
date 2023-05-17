@@ -31,7 +31,7 @@ import MonitorTab from './tabs/bottom/monitor_bottom_tab';
 import AboutTab from './tabs/bottom/about_bottom_tab';
 
 import socketIO from "socket.io-client";
-var socket = socketIO('http://192.168.248.180:5000');
+var socket = socketIO('http://192.168.14.180:5000');
 
 const Tab = createMaterialBottomTabNavigator();
 

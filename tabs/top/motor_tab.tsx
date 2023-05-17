@@ -45,7 +45,7 @@ export default function MotorTab({ socket }) {
         </View>
         <View style={styles.joystickContainer}>
           <Text style={styles.label}>Torso Control</Text>
-          <Joystick_torso/>
+          <Joystick_torso socket={socket}/>
           <Text style={styles.label}>Both Hands</Text>
           <Slider
             style={styles.slider}
@@ -81,7 +81,7 @@ export default function MotorTab({ socket }) {
             thumbTintColor="#333"
             onValueChange={value =>{
               setValue_pitch(value)
-              socket.emit('move', {component: 'head_pitch', gpos: value})
+              socket.emit('move/head', {component: 'head_pitch', gpos: value})
             }
             }
           />
@@ -96,7 +96,7 @@ export default function MotorTab({ socket }) {
         thumbTintColor="#333"
         onValueChange={value =>{
           setValue_yaw(value)
-          socket.emit('move', {component: 'head_yaw', gpos: value})
+          socket.emit('move/head', {component: 'head_yaw', gpos: value})
         }
         }
       />
@@ -111,7 +111,7 @@ export default function MotorTab({ socket }) {
         thumbTintColor="#333"
         onValueChange={value =>{
           setValue_eye(value)
-          socket.emit('move', {component: 'eye_self', gpos: value})
+          socket.emit('move/head', {component: 'eye_self', gpos: value})
         }
         }
       />
@@ -126,7 +126,7 @@ export default function MotorTab({ socket }) {
         thumbTintColor="#333"
         onValueChange={value =>{
           setValue_eye(value)
-          socket.emit('move', {component: 'eye_self', gpos: value})
+          socket.emit('move/head', {component: 'eye_self', gpos: value})
         }
         }
       />
