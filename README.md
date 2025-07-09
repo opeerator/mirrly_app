@@ -48,5 +48,9 @@ Originally developed to overcome the lack of an integrated control system for Mi
 1. Clone this repository:
    ```bash
    git clone https://github.com/opeerator/mirrly_app.git
-2. Run Command: npm install
-3. Run the application: npx expo start
+2. Run Command:
+   ```bash
+   npm install
+4. Run the application:
+   ```bash
+   npx expo start
