@@ -9,11 +9,11 @@ A React Native mobile application for controlling **Mirrly**, a custom-built hum
 <table>
   <tr>
     <td align="center">
-      <img src="./control_software_upload.jpg" alt="Motor Control" width="300"/><br>
+      <img src="./control_software_upload.jpg" alt="Motor Control" width="400"/><br>
       <em>Vision & Speech Panel</em>
     </td>
     <td align="center">
-      <img src="./control_software_upload2.jpg" alt="Vision and Speech" width="300"/><br>
+      <img src="./control_software_upload2.jpg" alt="Vision and Speech" width="400"/><br>
       <em>Motor & Sensor Panel</em>
     </td>
   </tr>
