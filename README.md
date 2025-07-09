@@ -4,6 +4,8 @@ A React Native mobile application for controlling **Mirrly**, a custom-built hum
 
 ---
 
+<div align="center">
+
 <table>
   <tr>
     <td align="center">
@@ -16,6 +18,8 @@ A React Native mobile application for controlling **Mirrly**, a custom-built hum
     </td>
   </tr>
 </table>
+
+</div>
 
 ---
 
