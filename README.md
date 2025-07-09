@@ -1,6 +1,6 @@
 # 🤖 Mirrly Control App
 
-A React Native mobile application for controlling **Mirrly**, a custom-built humanoid robot designed for child-robot interaction research. This app provides researchers and developers with a simple and intuitive interface to operate Mirrly in real-time via direct connection to the robot's onboard Raspberry Pi system.
+A React Native mobile application for controlling **Mirrly**, a custom-built humanoid robot designed for child-robot interaction research. This app provides researchers and developers with a simple and intuitive interface to operate Mirrly in real-time via direct connection to the robot's onboard [Raspberry Pi system backend](https://github.com/opeerator/mirrly_backend).
 
 ---
 
